@@ -1,63 +1,87 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
-
-import Bio from "../components/bio"
-import Layout from "../components/layout"
+import { graphql } from "gatsby"
 import Seo from "../components/seo"
+import PostCard from "../components/PostCard/PostCard"
+import Header from "../components/Header/Header"
+import Footer from "../components/Footer/Footer"
+import Navigation from "../components/Navigation/Navigation"
+import { useState } from "react"
+import { useEffect } from "react"
+import Pagenation from "../components/Pagenation/Pagenation"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
+  const [category, setCategory] = useState("전체")
+  const [content, setContent] = useState(posts)
+  const [page, setPage] = useState(1)
 
-  if (posts.length === 0) {
+  const changeCategory = category => {
+    setCategory(category)
+    setPage(1)
+  }
+  useEffect(() => {
+    setContent(
+      posts.filter(post => {
+        if (category === "전체") return true
+        if (post.frontmatter.category === category) return true
+        return false
+      })
+    )
+  }, [category, posts])
+
+  if (category === "회고") {
     return (
-      <Layout location={location} title={siteTitle}>
-        <Bio />
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
-      </Layout>
+      <div>
+        <Header path={location.pathname}>{siteTitle}</Header>
+        <main className="homeMain">
+          <Navigation select={category} setCategory={changeCategory} />
+          <div
+            style={{
+              minHeight: "calc(100vh - 370px)",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <p style={{ fontSize: "35px", fontWeight: "600" }}>
+              포스트가 없습니다.
+            </p>
+          </div>
+        </main>
+        <Footer />
+      </div>
     )
   }
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <Bio />
-      <ol style={{ listStyle: `none` }}>
-        {posts.map(post => {
-          const title = post.frontmatter.title || post.fields.slug
-
-          return (
-            <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    <Link to={post.fields.slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
-            </li>
-          )
-        })}
-      </ol>
-    </Layout>
+    <div>
+      <Header path={location.pathname}>{siteTitle}</Header>
+      <main className="homeMain">
+        <Navigation select={category} setCategory={changeCategory} />
+        <ol style={{ listStyle: `none` }}>
+          {content.slice((page - 1) * 5, page * 5).map(post => {
+            const title = post.frontmatter.title || post.fields.slug
+            return (
+              <PostCard
+                title={title}
+                date={post.frontmatter.date}
+                description={post.frontmatter.description}
+                category={post.frontmatter.category}
+                link={post.fields.slug}
+                key={title}
+              />
+            )
+          })}
+        </ol>
+        <Pagenation
+          page={page}
+          setPage={setPage}
+          contentLength={content.length}
+        />
+      </main>
+      <Footer />
+    </div>
   )
 }
 
@@ -84,9 +108,10 @@ export const pageQuery = graphql`
           slug
         }
         frontmatter {
-          date(formatString: "MMMM DD, YYYY")
+          date(formatString: "YYYY. MM. DD")
           title
           description
+          category
         }
       }
     }
