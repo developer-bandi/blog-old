@@ -99,9 +99,7 @@ const BlogPostTemplate = ({
           <p style={{ marginBottom: "30px" }}>{post.frontmatter.date}</p>
         </header>
         <img
-          src={`${window.location.protocol}//${
-            window.location.host
-          }/thumbnail${location.pathname.substring(
+          src={`https://puki4416blog.netlify.app/thumbnail${location.pathname.substring(
             0,
             location.pathname.length - 1
           )}.jpg`}
