@@ -12,24 +12,19 @@ module.exports = {
     title: `개발자 김상두`,
     author: {
       name: `김상두`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      summary: `프론트엔드 개발자 김상두 입니다.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
-    social: {
-      twitter: `kylemathews`,
-    },
+    description: `front-end developer kimsangdu blog`,
+    siteUrl: `https://puki4416blog.netlify.app`,
   },
   plugins: [
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        // You can add multiple tracking ids and a pageview event will be fired for all of them.
-        trackingIds: [
-          "G-6JV8B8FXNL", // 설정 Google Analytics / GA
-          // "AW-CONVERSION_ID", // Google Ads / Adwords / AW
-          // "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
-        ],
+        trackingIds: ["G-6JV8B8FXNL"],
+        pluginConfig: {
+          head: true,
+        },
       },
     },
     `gatsby-plugin-image`,
