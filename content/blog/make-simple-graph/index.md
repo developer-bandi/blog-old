@@ -1,5 +1,5 @@
 ---
-title: css를 이용해 간단한 그래프 만들기(feat.styled-component)
+title: css를 이용해 간단한 그래프 만들기(feat.styled-components)
 date: "2023-03-14T12:11:22.346Z"
 description: "styled-component를 이용해 두가지 형태의 그래프를 만들어 봅니다."
 category: 트러블슈팅
