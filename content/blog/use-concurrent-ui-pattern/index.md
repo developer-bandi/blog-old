@@ -1,5 +1,5 @@
 ---
-title: Concurrent ui pattern을 사용하여 선언적으로 컴포넌트를 작성하기
+title: Concurrent UI Pattern을 사용하여 선언적으로 컴포넌트를 작성하기
 date: "2023-03-17T20:33:02.234Z"
 description: "Concurrent ui pattern을 이용해 코드를 개선한 경험을 공유합니다"
 category: 트러블슈팅
