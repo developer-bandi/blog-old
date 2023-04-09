@@ -99,21 +99,21 @@ function App() {
 
 ### 이벤트 등록과정
 
-1. click: 'onClick' 과 같은 형식으로 NativeEvent 이름과 React 이벤트 핸들러 Property를 매핑합니다. 이를 이용해 이벤트가 발생하면 적절한 프로퍼티와 연결할수 있습니다.
+**1.**&nbsp;click: 'onClick' 과 같은 형식으로 NativeEvent 이름과 React 이벤트 핸들러 Property를 매핑합니다. 이를 이용해 이벤트가 발생하면 적절한 프로퍼티와 연결할수 있습니다.
 
-2. React에서는 정의한 이벤트 타입에 따라 부여하는 이벤트의 우선순위가 다른데, 전체 Native Event를 React에서 부여하는 기준에 맞게 우선순위를 설정합니다.
+**2.**&nbsp;React에서는 정의한 이벤트 타입에 따라 부여하는 이벤트의 우선순위가 다른데, 전체 Native Event를 React에서 부여하는 기준에 맞게 우선순위를 설정합니다.
 
-3. 앞서 언급한 이벤트 위임을 활용하여 Virtual DOM에 이벤트 핸들러들을 등록합니다.
+**3.**&nbsp;앞서 언급한 이벤트 위임을 활용하여 Virtual DOM에 이벤트 핸들러들을 등록합니다.
 
 ### 이벤트가 트리거되었을때
 
-1. Button을 클릭하면 React에서 ‘click’ 이벤트를 감지하고, 부착되어있는 이벤트 리스너가 트리거됩니다. 이때, 이 이벤트 리스너는 React에서 정의한 dispatchEvent 함수를 호출하게 됩니다.
+**1.**&nbsp;Button을 클릭하면 React에서 ‘click’ 이벤트를 감지하고, 부착되어있는 이벤트 리스너가 트리거됩니다. 이때, 이 이벤트 리스너는 React에서 정의한 dispatchEvent 함수를 호출하게 됩니다.
 
-2. 호출시 넘어온 이벤트 객체로부터 target DOM node(Button node)를 식별하며, 내부적으로 사용하는 키를 사용하여 이 DOM node가 어떤 Fiber node와 매칭되는지를 확인합니다
+**2.**&nbsp;호출시 넘어온 이벤트 객체로부터 target DOM node(Button node)를 식별하며, 내부적으로 사용하는 키를 사용하여 이 DOM node가 어떤 Fiber node와 매칭되는지를 확인합니다
 
-3. 해당 Fiber node를 찾고 나면, 해당 node로부터 출발해서 root node에 이르기까지 Fiber Tree를 순회합니다. 이때 매칭되는 이벤트 Property(‘onClick’)와 매칭되는 이벤트를 가지는 Fiber Node를 발견할때 마다 이 이벤트 리스너(콘솔을 찍는 함수)들을 dispatchQueue 라고 불리는 Array에 저장합니다.
+**3.**&nbsp;해당 Fiber node를 찾고 나면, 해당 node로부터 출발해서 root node에 이르기까지 Fiber Tree를 순회합니다. 이때 매칭되는 이벤트 Property(‘onClick’)와 매칭되는 이벤트를 가지는 Fiber Node를 발견할때 마다 이 이벤트 리스너(콘솔을 찍는 함수)들을 dispatchQueue 라고 불리는 Array에 저장합니다.
 
-4. root node에 도착하고 나면, dispatchQueue라는 array에서 리스너를 꺼내어 실행합니다. queue이기 때문에 먼저 들어간 요소가 가장 먼저 실행되며 propagation 여부를 통과하지 못하는경우 나머지도 실행되지 않습니다.
+**4.**&nbsp;root node에 도착하고 나면, dispatchQueue라는 array에서 리스너를 꺼내어 실행합니다. queue이기 때문에 먼저 들어간 요소가 가장 먼저 실행되며 propagation 여부를 통과하지 못하는경우 나머지도 실행되지 않습니다.
 
 ## React 16버전과 17버전에서의 차이
 
