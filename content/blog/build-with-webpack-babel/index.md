@@ -3,6 +3,7 @@ title: webpack 과 babel을 이용하여 프로젝트 세팅하기
 date: "2023-04-17T20:35:20.114Z"
 description: "create-react-app 대신 webpack과 babel을 사용해 프로젝트를 세팅해봅시다"
 category: 기술아티클
+thumbnail: "../../../static/thumbnail/build-with-webpack-babel.jpg"
 ---
 
 ## 시작하며

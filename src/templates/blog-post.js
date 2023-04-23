@@ -7,6 +7,7 @@ import Footer from "../components/Footer/Footer"
 import Utterances from "../components/Utterances/Utterances"
 import { useEffect } from "react"
 import { useRef } from "react"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const BlogPostTemplate = ({
   data: { site, markdownRemark: post },
@@ -80,6 +81,9 @@ const BlogPostTemplate = ({
       }
     }
   }, [])
+
+  const image = getImage(post.frontmatter.thumbnail)
+
   return (
     <div>
       <Header path={location.pathname}>{siteTitle}</Header>
@@ -98,12 +102,9 @@ const BlogPostTemplate = ({
           </h1>
           <p style={{ marginBottom: "30px" }}>{post.frontmatter.date}</p>
         </header>
-        <img
-          src={`https://puki4416blog.netlify.app/thumbnail${location.pathname.substring(
-            0,
-            location.pathname.length - 1
-          )}.jpg`}
-          alt="thumbnail"
+        <GatsbyImage
+          image={image}
+          alt={"thumbnail"}
           style={{
             width: "100%",
             height: "300px",
@@ -157,6 +158,11 @@ export const pageQuery = graphql`
         title
         date(formatString: "YYYY. MM. DD")
         description
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
       }
     }
   }

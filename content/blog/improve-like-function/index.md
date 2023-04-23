@@ -3,6 +3,7 @@ title: optimistic update를 활용하여 좋아요 기능 개선하기
 date: "2023-02-05T18:47:18.164Z"
 description: "optimistic update와 몇가지 아이디어를 활용해 좋아요 기능을 개선해봅니다"
 category: 트러블슈팅
+thumbnail: "../../../static/thumbnail/improve-like-function.jpg"
 ---
 
 ## 들어가며

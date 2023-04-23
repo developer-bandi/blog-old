@@ -1,8 +1,11 @@
 import { Link } from "gatsby"
 import * as React from "react"
 import * as styles from "./PostCard.module.css"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-const PostCard = ({ date, title, description, category, link }) => {
+const PostCard = ({ date, title, description, category, link, thumbnail }) => {
+  const image = getImage(thumbnail)
+
   return (
     <li key={title + date} className={styles.container}>
       <article itemScope itemType="http://schema.org/Article">
@@ -17,9 +20,9 @@ const PostCard = ({ date, title, description, category, link }) => {
             </p>
             <time className={styles.date}>{date}</time>
           </div>
-          <img
-            src={`thumbnail${link.substring(0, link.length - 1)}.jpg`}
-            alt="thumbnail"
+          <GatsbyImage
+            image={image}
+            alt={"thumbnail"}
             className={styles.thumbnail}
           />
         </Link>

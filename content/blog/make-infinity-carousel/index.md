@@ -3,6 +3,7 @@ title: 무한캐러셀 만들어보기
 date: "2023-02-18T19:49:33.392Z"
 description: "몇가지 아이디어를 이용하여 무한캐러셀 구현해봅니다"
 category: 트러블슈팅
+thumbnail: "../../../static/thumbnail/make-infinity-carousel.jpg"
 ---
 
 ## 들어가며

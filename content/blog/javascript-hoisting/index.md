@@ -3,6 +3,7 @@ title: 호이스팅 깊게 이해하기
 date: "2023-03-28T16:22:32.184Z"
 description: "자바스크립트에서의 호이스팅에 대해 설명합니다"
 category: 기술아티클
+thumbnail: "../../../static/thumbnail/javascript-hoisting.jpg"
 ---
 
 ## 들어가며

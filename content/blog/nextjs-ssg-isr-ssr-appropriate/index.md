@@ -3,6 +3,7 @@ title: Next.js 의 SSG, SSR, ISR를 적절하게 이용하여 UX 개선하기
 date: "2023-01-25T22:12:03.284Z"
 description: "Next.js에서 pre-render를 효율적으로 적용하는 방식에 대해서 알아봅니다."
 category: 트러블슈팅
+thumbnail: "../../../static/thumbnail/nextjs-ssg-isr-ssr-appropriate.jpg"
 ---
 
 ## 들어가며

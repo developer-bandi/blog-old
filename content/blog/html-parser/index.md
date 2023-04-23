@@ -3,6 +3,7 @@ title: 브라우저는 HTML을 어떻게 읽어낼까?
 date: "2023-04-13T10:44:10.364Z"
 description: "HTML Parser를 직접 만들어보면서 브라우저의 HTML Parsing 과정을 이해해 봅니다."
 category: 기술아티클
+thumbnail: "../../../static/thumbnail/html-parser.jpg"
 ---
 
 ## 들어가며

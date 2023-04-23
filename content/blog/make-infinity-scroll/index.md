@@ -3,6 +3,7 @@ title: 무한스크롤 만들어보기
 date: "2023-02-12T19:49:33.392Z"
 description: "virtual scroll과 debounce를 이용하여 무한스크롤을 구현해봅니다"
 category: 트러블슈팅
+thumbnail: "../../../static/thumbnail/make-infinity-scroll.jpg"
 ---
 
 ## 들어가며

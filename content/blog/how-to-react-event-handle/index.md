@@ -3,6 +3,7 @@ title: React에서는 이벤트를 어떻게 처리하고 있을까?
 date: "2023-04-09T01:10:10.364Z"
 description: "React에서 이벤트를 처리하기 위한 여러 방식을 소개합니다"
 category: 기술아티클
+thumbnail: "../../../static/thumbnail/how-to-react-event-handle.jpg"
 ---
 
 ## 들어가며

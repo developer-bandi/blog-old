@@ -3,6 +3,7 @@ title: lazy loading을 적용하여 초기 로드시간 개선하기
 date: "2023-03-04T20:23:11.114Z"
 description: "lazy loading을 사용해 이미지 성능최적화를 시도한 사례를 공유합니다."
 category: 트러블슈팅
+thumbnail: "../../../static/thumbnail/improve-initial-load-use-lazyloading.jpg"
 ---
 
 ## 들어가며

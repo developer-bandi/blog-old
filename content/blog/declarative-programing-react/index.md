@@ -3,6 +3,7 @@ title: 선언형 프로그래밍과 React
 date: "2023-04-21T18:10:30.114Z"
 description: "React에서 선언형이 가지는 의미에 대해서 이야기해봅니다"
 category: 기술아티클
+thumbnail: "../../../static/thumbnail/declarative-programing-react.jpg"
 ---
 
 ## 들어가며

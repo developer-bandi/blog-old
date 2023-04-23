@@ -3,6 +3,7 @@ title: 탭 전환시 화면이 깜빡거리는 문제 해결하기
 date: "2023-01-30T16:48:08.134Z"
 description: "이미지를 최적화하여 탭 전환시 화면이 하얗게 되는 문제를 해결해봅니다."
 category: 트러블슈팅
+thumbnail: "../../../static/thumbnail/tab-switch-window-flicker.jpg"
 ---
 
 ## 들어가며

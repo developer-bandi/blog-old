@@ -3,6 +3,7 @@ title: pre loading을 사용하여 이미지 렌더링 개선하기
 date: "2023-03-07T22:43:11.464Z"
 description: "이미지가 늦게 로드되어서 이미지가 겹치는 현상을 해결해봅니다"
 category: 트러블슈팅
+thumbnail: "../../../static/thumbnail/improve-image-render-use-preloading.jpg"
 ---
 
 ## 들어가며

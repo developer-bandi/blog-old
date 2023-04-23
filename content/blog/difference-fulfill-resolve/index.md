@@ -3,6 +3,7 @@ title: Promise에서 resolve 와 fulfill의 차이
 date: "2023-04-03T22:09:18.164Z"
 description: "promise에서 자주 혼동되는 resolve와 fulfill에 대해서 알아봅니다"
 category: 기술아티클
+thumbnail: "../../../static/thumbnail/difference-fulfill-resolve.jpg"
 ---
 
 ## 들어가며

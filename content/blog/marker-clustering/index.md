@@ -3,6 +3,7 @@ title: 클러스터링을 활용하여 지도 렌더링 최적화하기(feat. �
 date: "2023-02-24T11:45:33.112Z"
 description: "클러스터링을 이용해 지도의 렌더링을 최적화하고 이를 오픈소스로 배포한 경험을 공유합니다."
 category: 트러블슈팅
+thumbnail: "../../../static/thumbnail/marker-clustering.jpg"
 ---
 
 ## 들어가며

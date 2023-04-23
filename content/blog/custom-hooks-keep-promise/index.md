@@ -3,6 +3,7 @@ title: 규칙이 깨지지 않도록 Custom Hooks을 사용하기
 date: "2023-03-22T17:22:11.234Z"
 description: "자주사용하는 코드를 Custom Hooks를 이용해 처리해봅니다"
 category: 트러블슈팅
+thumbnail: "../../../static/thumbnail/custom-hooks-keep-promise.jpg"
 ---
 
 ## 들어가며

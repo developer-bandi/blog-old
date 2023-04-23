@@ -3,6 +3,7 @@ title: Storybook을 사용해 컴포넌트 단위로 개발하기
 date: "2023-03-25T20:11:10.254Z"
 description: "Storybook을 사용해 테스트 및 컴포넌트 단위로 개발하는 과정을 이야기합니다."
 category: 트러블슈팅
+thumbnail: "../../../static/thumbnail/develop-component-use-storybook.jpg"
 ---
 
 ## 시작하며

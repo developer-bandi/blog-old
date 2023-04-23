@@ -3,6 +3,7 @@ title: 적절한 로딩 화면 사용하기
 date: "2023-02-28T18:42:03.114Z"
 description: "사용자에게 좋은 경험을 주는 로딩화면에 대해 고민한 내용을 이야기합니다"
 category: 트러블슈팅
+thumbnail: "../../../static/thumbnail/use-appropriate-loading.jpg"
 ---
 
 ## 들어가며
