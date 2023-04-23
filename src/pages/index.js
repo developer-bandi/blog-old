@@ -1,4 +1,5 @@
 import * as React from "react"
+import { AppContext } from "../context/app-context"
 import { graphql } from "gatsby"
 import Seo from "../components/seo"
 import PostCard from "../components/PostCard/PostCard"
@@ -12,14 +13,11 @@ import Pagenation from "../components/Pagenation/Pagenation"
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
-  const [category, setCategory] = useState("전체")
   const [content, setContent] = useState(posts)
-  const [page, setPage] = useState(1)
 
-  const changeCategory = category => {
-    setCategory(category)
-    setPage(1)
-  }
+  const { page, setPage, category, setCategoryInitPage } =
+    React.useContext(AppContext)
+
   useEffect(() => {
     setContent(
       posts.filter(post => {
@@ -35,7 +33,7 @@ const BlogIndex = ({ data, location }) => {
       <div>
         <Header path={location.pathname}>{siteTitle}</Header>
         <main className="homeMain">
-          <Navigation select={category} setCategory={changeCategory} />
+          <Navigation select={category} setCategory={setCategoryInitPage} />
           <div
             style={{
               minHeight: "calc(100vh - 370px)",
@@ -58,10 +56,11 @@ const BlogIndex = ({ data, location }) => {
     <div>
       <Header path={location.pathname}>{siteTitle}</Header>
       <main className="homeMain">
-        <Navigation select={category} setCategory={changeCategory} />
+        <Navigation select={category} setCategory={setCategoryInitPage} />
         <ol style={{ listStyle: `none` }}>
           {content.slice((page - 1) * 5, page * 5).map(post => {
             const title = post.frontmatter.title || post.fields.slug
+
             return (
               <PostCard
                 title={title}
@@ -70,6 +69,7 @@ const BlogIndex = ({ data, location }) => {
                 category={post.frontmatter.category}
                 link={post.fields.slug}
                 key={title}
+                thumbnail={post.frontmatter.thumbnail}
               />
             )
           })}
@@ -112,6 +112,11 @@ export const pageQuery = graphql`
           title
           description
           category
+          thumbnail {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
         }
       }
     }

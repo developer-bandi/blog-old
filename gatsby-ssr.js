@@ -1,3 +1,6 @@
+const React = require("react")
+const RootElement = require("./src/context/root-element")
+
 /**
  * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
  *
@@ -8,5 +11,9 @@
  * @type {import('gatsby').GatsbySSR['onRenderBody']}
  */
 exports.onRenderBody = ({ setHtmlAttributes }) => {
-  setHtmlAttributes({ lang: `en` })
+  setHtmlAttributes({ lang: `ko` })
+}
+
+exports.wrapPageElement = ({ element, props }) => {
+  return <RootElement {...props}>{element}</RootElement>
 }
