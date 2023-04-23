@@ -20,7 +20,7 @@ const Header = ({ children, path }) => {
             className={`${styles.link} ${
               path === "/about" ? styles.select : ""
             }`}
-            to="about"
+            to="/about"
           >
             Abouts
           </Link>
