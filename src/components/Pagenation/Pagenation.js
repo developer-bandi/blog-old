@@ -2,12 +2,6 @@ import * as React from "react"
 import * as styles from "./Pagenation.module.css"
 
 const Pagenation = ({ page, contentLength, setPage }) => {
-  console.log(
-    page,
-    contentLength,
-    setPage,
-    new Array(Math.ceil(contentLength / 5))
-  )
   return (
     <ul className={styles.container}>
       {new Array(Math.ceil(contentLength / 5))

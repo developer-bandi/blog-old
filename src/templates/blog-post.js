@@ -17,7 +17,6 @@ const BlogPostTemplate = ({
   const bodyRef = useRef(null)
   const tocRef = useRef(null)
   const raf = useRef()
-  console.log(post.tableOfContents)
 
   useEffect(() => {
     const headerTag = ["H1", "H2", "H3", "H4", "H5", "H6"]
@@ -42,9 +41,6 @@ const BlogPostTemplate = ({
       const href = el.href.split("/")[el.href.split("/").length - 1]
       tocAnchorElements[href] = el
     }
-    console.log(headerNames)
-    console.log(headerPosition)
-    console.log(tocAnchorElements)
 
     const changeStyle = name => {
       const el = tocAnchorElements[`#${encodeURI(name)}`]
