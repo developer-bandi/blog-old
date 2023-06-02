@@ -73,7 +73,7 @@ const BlogPostTemplate = ({
     return () => {
       window.removeEventListener("scroll", scrollEventHandler)
       if (raf.current !== undefined) {
-        window.cancelAnimationFrame(raf)
+        window.cancelAnimationFrame(raf.current)
       }
     }
   }, [])

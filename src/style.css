@@ -347,6 +347,8 @@ a.nodisplay {
   top: 120px;
   left: calc((100vw - 700px) / 2 + 720px);
   font-size: 14px;
+  height: calc(100vh - 200px);
+  overflow: auto;
 }
 
 .toc p {
